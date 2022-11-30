@@ -20,7 +20,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Marathonz</title>
+    <title>Marathon</title>
     <link rel="stylesheet" href="style/css/bootstrap.css">
     <link rel="stylesheet" href="style/fontawesome/css/all.css">
     <link rel="stylesheet" href="style/css/head.css">
