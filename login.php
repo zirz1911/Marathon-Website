@@ -75,8 +75,8 @@ include('Server/connect.php');
 
                         <div class="text-center text-lg-start mt-4 pt-2">
                             <button type="submit" name="login_user" class="btn btn-success btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชี <a href="register.php" class="link-danger">สมัครสมาชิกทั่วไป</a></p>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชีผู้จัดงาน <a href="register.php" class="link-danger">สมัครสมาชิกผู้จัดงาน</a></p>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชี <a href="user/register.php" class="link-danger">สมัครสมาชิกทั่วไป</a></p>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชีผู้จัดงาน <a href="organizer/register_organizer.php" class="link-danger">สมัครสมาชิกผู้จัดงาน</a></p>
                         </div>
 
                     </form>

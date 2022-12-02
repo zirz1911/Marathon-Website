@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include('Server/connect.php');
+    include('../Server/connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 
-    <link rel="stylesheet" href="style/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/css/bootstrap.css">
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     </div>
  
     <form action="register_db.php" method="post" class="container">
-        <?php include('errors.php'); ?>
+        <?php include('../errors.php'); ?>
         <?php if (isset($_SESSION['error'])) : ?>
             <div class="error">
                 <p class="alert alert-warning">

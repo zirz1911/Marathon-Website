@@ -51,9 +51,6 @@
                     <li class="btn-outline-dark">
                         <a class="nav-link text-white" href="#"><i class="fa fa-contact-book"></i> Contact</a>
                     </li>
-                    <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="login.php"><i class="fa fa-contact-book"></i> Login</a>
-                    </li>
 
                     <!-- Show when logged in -->
                     <?php if (isset($_SESSION['username'])) : ?>

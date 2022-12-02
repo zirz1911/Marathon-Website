@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    include('Server/connect.php');
+    include('../Server/connect.php');
 
     $errors = array();
 

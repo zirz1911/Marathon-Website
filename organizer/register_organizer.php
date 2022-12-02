@@ -1,4 +1,5 @@
 <?php
     session_start();
-    include('Server/connect.php');
+    include('../Server/connect.php');
+    echo('ยังไม่ทำครับ');
 ?>
