@@ -65,14 +65,15 @@
             }
         }
 
+        //INSERT REGISTER INFORMATIONx1
         if (count($errors) == 0){
 
-            $sql = "INSERT INTO user (username, user_namee, user_surname, user_password, user_id_card, user_birthday) VALUES ('$username', '$name', '$surname', '$password_1', '$idcard', '$birthday')";
+            $sql = "INSERT INTO user (username, user_namee, user_surname, user_password, user_id_card, user_birthday, user_level) VALUES ('$username', '$name', '$surname', '$password_1', '$idcard', '$birthday', 'M')";
             mysqli_query($conn, $sql);
 
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: base.php');
+            header('location: index_user.php');
         } else {
             header("location: register.php");
         }
