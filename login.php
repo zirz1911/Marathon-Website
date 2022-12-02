@@ -92,14 +92,14 @@ include('Server/connect.php');
             <!-- Copyright -->
 
             <!-- Right -->
-            <div>
+            <!--<div>
                 <a href="#!" class="text-white me-4">
                     <i class="fab fa-facebook-f"></i>
                 </a>
                 <a href="#!" class="text-white me-4">
                     <i class="fab fa-twitter"></i>
                 </a>
-            </div>
+            </div> -->
             <!-- Right -->
         </div>
     </section>
