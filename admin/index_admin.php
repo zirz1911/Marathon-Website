@@ -8,7 +8,7 @@
 
     if (isset($_GET['logout'])){
         session_destroy();
-        unset($_SESSION['username']);
+        unset($_SESSION['email']);
         header('location: login.php');
     }
 
@@ -49,10 +49,10 @@
                         <a class="nav-link text-white" href="#"><i class="fa fa-user"></i> ข้อมูลผู้ใช้</a>
                     </li>
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="#"><i class="fa fa-contact-book"></i> จัดการงานวิ่ง</a>
+                        <a class="nav-link text-white" href="information.php"><i class="fa fa-contact-book"></i> จัดการงานวิ่ง</a>
                     </li>
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="#"><i class="fa fa-list"></i> จัดการ</a>
+                        <a class="nav-link text-white" href="#"><i class="fa fa-list"></i> จัดการผู้ใช้</a>
                     </li>
 
                     <!-- Show when logged in -->
