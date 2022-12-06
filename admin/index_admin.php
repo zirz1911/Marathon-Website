@@ -43,17 +43,20 @@
                         <a class="nav-link text-white" href="index_admin.php"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="#"><i class="fa fa-list"></i> Event</a>
+                        <a class="nav-link text-white" href="#"><i class="fa fa-list"></i> งานวิ่ง</a>
                     </li>
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="#"><i class="fa fa-user"></i> User</a>
+                        <a class="nav-link text-white" href="#"><i class="fa fa-user"></i> ข้อมูลผู้ใช้</a>
                     </li>
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="#"><i class="fa fa-contact-book"></i> Contact</a>
+                        <a class="nav-link text-white" href="#"><i class="fa fa-contact-book"></i> จัดการงานวิ่ง</a>
+                    </li>
+                    <li class="btn-outline-dark">
+                        <a class="nav-link text-white" href="#"><i class="fa fa-list"></i> จัดการ</a>
                     </li>
 
                     <!-- Show when logged in -->
-                    <?php if (isset($_SESSION['username'])) : ?>
+                    <?php if (isset($_SESSION['email'])) : ?>
                        
                         <li class="btn-outline-dark">
                         <a class="nav-link text-white" href="../index.php?logout='1'"><i class="fa fa-contact-book"></i> Logout</a>

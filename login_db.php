@@ -5,11 +5,11 @@
     $errors = array();
 
     if (isset($_POST['login_user'])) {
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
-        if (empty($username)) {
-            array_push($errors, "Username is required");
+        if (empty($email)) {
+            array_push($errors, "Email is required");
         }
 
         if (empty($password)) {
@@ -18,12 +18,12 @@
 
         if (count($errors) == 0) {
 
-            $query = "SELECT * FROM user WHERE username = '$username' AND user_password = '$password' ";
+            $query = "SELECT * FROM user WHERE email = '$email' AND user_password = '$password' ";
             $result = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($result) == 1) {
                 $row = mysqli_fetch_array($result);
-                $_SESSION['username'] = $username;
+                $_SESSION['email'] = $email;
                 $_SESSION["user_level"] = $row["user_level"];
 
                 if($_SESSION["user_level"]=="A"){ //ถ้าเป็น admin ให้กระโดดไปหน้า admin_page.php
