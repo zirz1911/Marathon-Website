@@ -23,16 +23,16 @@ include('../Server/connect.php');
 <!-- Login Form -->
 <form action="organizer_login_db.php" method="post">
     
-    <section class="vh-100" style="background-color: #ffffff;">
+    <section class="vh-100" style="background-color: #f7e2ab;">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZTU2YWMxYTItNDcyOC00MzIyLWEyOWMtMDcxYmYxNzg5NDc5XkEyXkFqcGdeQXVyMTA5NzI0NDY2._V1_.jpg" class="img-fluid" alt="Sample image">
+                    <img src="https://blog.vantagecircle.com/content/images/2019/06/Types-of-Meetings.png" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form>
                         <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                            <p class="" style="font-size: 30px;">Marathon Site</p>
+                            <p class="" style="font-size: 30px;">ส่วนของผู้จัดงาน</p>
                         </div>
 
                         <div class="divider d-flex align-items-center my-4">

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 09:36 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 07, 2022 at 02:44 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,36 +24,107 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `event_information`
+--
+
+CREATE TABLE `event_information` (
+  `id` int(10) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `lenght` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `event_information`
+--
+
+INSERT INTO `event_information` (`id`, `name`, `lenght`) VALUES
+(1, 'test', 10),
+(2, 'test002', 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `organizer`
+--
+
+CREATE TABLE `organizer` (
+  `name` char(50) NOT NULL,
+  `surname` char(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `gender` char(10) DEFAULT NULL,
+  `birthday` varchar(50) DEFAULT NULL,
+  `tel` varchar(15) DEFAULT NULL,
+  `nationality` char(20) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  `user_level` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `organizer`
+--
+
+INSERT INTO `organizer` (`name`, `surname`, `email`, `password`, `gender`, `birthday`, `tel`, `nationality`, `picture`, `user_level`) VALUES
+('Raiden', 'DD', 'test@gmail.com', '1234', NULL, NULL, NULL, NULL, NULL, 'O');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `username` varchar(11) NOT NULL,
-  `user_namee` varchar(50) NOT NULL,
-  `user_surname` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `name` char(50) NOT NULL,
+  `surname` char(50) NOT NULL,
   `user_password` varchar(50) NOT NULL,
-  `user_id_card` varchar(200) NOT NULL,
-  `user_birthday` varchar(50) DEFAULT NULL,
-  `user_level` text NOT NULL
+  `gender` char(10) DEFAULT NULL,
+  `birthday` varchar(50) DEFAULT NULL,
+  `tel` varchar(10) DEFAULT NULL,
+  `nationality` varchar(20) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  `user_level` varchar(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `user_namee`, `user_surname`, `user_password`, `user_id_card`, `user_birthday`, `user_level`) VALUES
-('test001', 'Patipan', 'Thummanok', '1234', '1411901334559', '09/12/1999', 'A'),
-('test02', 'Pati', 'Pati', '1234', '1234567890123', '2009-12-23', 'M');
+INSERT INTO `user` (`email`, `name`, `surname`, `user_password`, `gender`, `birthday`, `tel`, `nationality`, `picture`, `user_level`) VALUES
+('patipan.tu@rmuti.ac.th', 'Pati', 'Pati', '1234', NULL, NULL, NULL, NULL, NULL, 'A'),
+('patmanok8@gmail.com', 'Patipan', 'Thummanok', '1234', NULL, NULL, NULL, NULL, NULL, 'M');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `event_information`
+--
+ALTER TABLE `event_information`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `organizer`
+--
+ALTER TABLE `organizer`
+  ADD PRIMARY KEY (`email`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `event_information`
+--
+ALTER TABLE `event_information`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
