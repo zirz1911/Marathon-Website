@@ -1,6 +1,17 @@
 <?php 
     session_start();
 
+    /*if (!isset($_SESSION['username'])){
+        $_SESSION['msg'] = "You must login first";
+        header('location: login.php');
+    }*/
+
+    if (isset($_GET['logout'])){
+        session_destroy();
+        unset($_SESSION['email']);
+        header('location: organizer_login.php');
+    }
+
 ?>
 
 
@@ -17,24 +28,35 @@
 
 <body style="background-color: #f3f3f3; opacity: 100%; padding-bottom: 0px">
 
-    <!-- ส่วน Menu -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark p-md-3" style="background-color: red;">
+    <!-- ส่วน Menu -->
         <div class="container">
-            <a class="navbar-brand" href="#">Admin Marathon</a>
+            <a class="navbar-brand" href="#">Marathon</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav" style="margin-bottom: 0px">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <div class="mx-auto"></div>
                 <ul class="navbar-nav">
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="index_admin.php"><i class="fa fa-home"></i> หน้าแรก</a>
+                        <a class="nav-link text-white" href="index_user.php"><i class="fa fa-home"></i> Home</a>
                     </li>
                     <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="information.php"><i class="fa fa-arrow-left"></i> ก่อนหน้า</a>
+                        <a class="nav-link text-white" href="#"><i class="fa fa-list"></i> งานวิ่ง</a>
                     </li>
+                    <li class="btn-outline-dark">
+                        <a class="nav-link text-white" href="#"><i class="fa fa-user"></i> ข้อมูลผู้ใช้</a>
+                    </li>
+
+                    <!-- Show when logged in -->
+                    <?php if (isset($_SESSION['email'])) : ?>
+                       
+                        <li class="btn-outline-dark">
+                        <a class="nav-link text-white" href="../index.php?logout='1'"><i class="fa fa-contact-book"></i> Logout</a>
+                        </li>
                     
+                    <?php endif ?>
 
 
                 </ul>
@@ -42,18 +64,20 @@
         </div>
     </nav>
 
-    
+    <br>
 
 
     <!-- ส่วน Content -->
+    <div class="container-fluid" style="padding-top: 0px">
+        <div class="row">
+            <div class="col-md-12" style="background-color: #f3f3f3; opacity: 100%; padding-bottom: 0px">
 
-    <div class="header" style="margin: 65px 0px 0px 0px; background-color: #ffffff;">
-        <button onclick="document.location = 'add/add_event_information.php'" name="add_event" class="btn btn-success btn-md" style="margin: 10px 10px 10px 10px; float: right;">เพิ่มข้อมูลงานวิ่ง</button>
+                
+    <div class="header">
+        <h2>Home Page</h2>
     </div>
 
     <div class="content">
-        <br><br>
-        <p style="background-color: red; margin-top: 3px;">123</p>
         <!-- Notification massege -->
         <?php if (isset($_SESSION['success'])) : ?>
             <div class="success">
@@ -65,6 +89,13 @@
                 </p>
             </div>
         <?php endif ?>
+
+
+        <!-- Logged in User -->
+        <?php if(isset($_SESSION['name'])) : ?>
+            <p>Welcome <strong><?php echo $_SESSION['name'];?></p>
+            <p><a href="../organizer_login.php?logout='1'" style="color: red;">Logout</a></p>
+            <?php endif ?>    
     </div>
 
     <script src="style/js/bootstrap.bundle.js"></script>

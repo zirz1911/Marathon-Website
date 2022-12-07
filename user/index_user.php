@@ -48,9 +48,6 @@
                     <li class="btn-outline-dark">
                         <a class="nav-link text-white" href="#"><i class="fa fa-user"></i> ข้อมูลผู้ใช้</a>
                     </li>
-                    <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="../organizer/register_organizer.php"><i class="fa fa-contact-book"></i> สำหรับผู้จัดงาน</a>
-                    </li>
 
                     <!-- Show when logged in -->
                     <?php if (isset($_SESSION['email'])) : ?>
@@ -102,8 +99,8 @@
 
 
         <!-- Logged in User -->
-        <?php if(isset($_SESSION['username'])) : ?>
-            <p>Welcome <strong><?php echo $_SESSION['username'];?></p>
+        <?php if(isset($_SESSION['name'])) : ?>
+            <p>Welcome <strong><?php echo $_SESSION['name'];?></p>
             <p><a href="../index.php?logout='1'" style="color: red;">Logout</a></p>
             <?php endif ?>    
     </div>

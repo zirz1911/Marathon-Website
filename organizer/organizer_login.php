@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('Server/connect.php');
+include('../Server/connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +12,16 @@ include('Server/connect.php');
     <title>Login</title>
 
 
-    <link rel="stylesheet" href="style/css/bootstrap.css">
-    <link rel="stylesheet" href="style/css/login_page.css">
+    <link rel="stylesheet" href="../style/css/bootstrap.css">
+    <link rel="stylesheet" href="../style/css/login_page.css">
+    <link rel="stylesheet" href="../style/fontawesome/css/all.css">
+    <link rel="stylesheet" href="../style/css/header.css">
 </head>
 
 <body>
 
 <!-- Login Form -->
-<form action="login_db.php" method="post">
+<form action="organizer_login_db.php" method="post">
     
     <section class="vh-100" style="background-color: #ffffff;">
         <div class="container-fluid h-custom">
@@ -72,9 +74,8 @@ include('Server/connect.php');
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" name="login_user" class="btn btn-success btn-md" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <button type="button" onclick="document.location = 'organizer/organizer_login.php' " class="btn btn-warning btn-md" style="padding-left: 2.5rem; padding-right: 2.5rem;">ส่วนของผู้จัดงาน</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชี <a href="user/register.php" class="link-danger">สมัครสมาชิกทั่วไป</a></p>
+                            <button type="submit" name="login_organizer" class="btn btn-success btn-md" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชี <a href="register_organizer.php" class="link-danger">สมัครเป็นผู้จัดงาน</a></p>
                         </div>
 
                     </form>
@@ -82,16 +83,27 @@ include('Server/connect.php');
             </div>
         </div>
         
-        <div class="d-flex flex-column flex-sm-row text-center text-sm-start justify-content-between py-4 px-4 px-xl-5" style="background-color: red; ">
+        <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5" style="background-color: red;">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
                 Marathon site 2022
             </div>
+            <!-- Copyright -->
+
+            <!-- Right -->
+            <!--<div>
+                <a href="#!" class="text-white me-4">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#!" class="text-white me-4">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div> -->
+            <!-- Right -->
         </div>
     </section>
 
 </form>
-
 
 </body>
 
