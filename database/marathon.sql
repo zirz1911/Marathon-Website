@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2022 at 02:44 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Dec 07, 2022 at 03:47 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,31 @@ SET time_zone = "+00:00";
 --
 -- Database: `marathon`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `name` char(50) NOT NULL,
+  `surname` char(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `gender` char(10) DEFAULT NULL,
+  `birthday` varchar(50) DEFAULT NULL,
+  `tel` varchar(10) DEFAULT NULL,
+  `nationality` char(20) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`name`, `surname`, `email`, `password`, `gender`, `birthday`, `tel`, `nationality`, `picture`) VALUES
+('Panda', 'Dang', 'panda@gmail.com', '1234', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL');
 
 -- --------------------------------------------------------
 
@@ -82,21 +107,26 @@ CREATE TABLE `user` (
   `birthday` varchar(50) DEFAULT NULL,
   `tel` varchar(10) DEFAULT NULL,
   `nationality` varchar(20) DEFAULT NULL,
-  `picture` varchar(255) DEFAULT NULL,
-  `user_level` varchar(3) NOT NULL
+  `picture` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`email`, `name`, `surname`, `user_password`, `gender`, `birthday`, `tel`, `nationality`, `picture`, `user_level`) VALUES
-('patipan.tu@rmuti.ac.th', 'Pati', 'Pati', '1234', NULL, NULL, NULL, NULL, NULL, 'A'),
-('patmanok8@gmail.com', 'Patipan', 'Thummanok', '1234', NULL, NULL, NULL, NULL, NULL, 'M');
+INSERT INTO `user` (`email`, `name`, `surname`, `user_password`, `gender`, `birthday`, `tel`, `nationality`, `picture`) VALUES
+('patipan.tu@rmuti.ac.th', 'Pati', 'Pati', '1234', NULL, NULL, NULL, NULL, NULL),
+('patmanok8@gmail.com', 'Patipan', 'Thummanok', '1234', NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`email`);
 
 --
 -- Indexes for table `event_information`
