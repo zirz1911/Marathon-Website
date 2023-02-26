@@ -48,8 +48,8 @@
                     <li class="btn-outline-dark">
                         <a class="nav-link text-white" href="#"><i class="fa fa-user"></i> ข้อมูลผู้ใช้</a>
                     </li>
-
                     <!-- Show when logged in -->
+
                     <?php if (isset($_SESSION['email'])) : ?>
                        
                         <li class="btn-outline-dark">
