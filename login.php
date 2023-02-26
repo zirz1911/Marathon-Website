@@ -85,7 +85,7 @@ include('Server/connect.php');
         <div class="d-flex flex-column flex-sm-row text-center text-sm-start justify-content-between py-4 px-4 px-xl-5" style="background-color: red; ">
             <!-- Copyright -->
             <div class="text-white mb-3 mb-md-0">
-                Marathon site 2022
+                Marathon site 2022 z
             </div>
         </div>
     </section>
