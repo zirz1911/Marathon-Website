@@ -21,11 +21,11 @@ include('Server/connect.php');
 <!-- Login Form -->
 <form action="login_db.php" method="post">
     
-    <section class="vh-100" style="background-color: #ffffff;">
+    <section class="container-sm" style="background-color: #ffffff; margin-bottom: auto">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://m.media-amazon.com/images/M/MV5BZTU2YWMxYTItNDcyOC00MzIyLWEyOWMtMDcxYmYxNzg5NDc5XkEyXkFqcGdeQXVyMTA5NzI0NDY2._V1_.jpg" class="img-fluid" alt="Sample image">
+                    <img src="https://res.cloudinary.com/im2015/image/upload/w_1600,h_900,c_fill,g_center//blog/running_cover_1.jpg" class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                     <form>
@@ -39,13 +39,17 @@ include('Server/connect.php');
 
                         <!-- User input -->
                         <div class="form-outline mb-4">
-                            <input type="email" class="form-control form-control-lg" placeholder="Enter Email" name="email" />
+                            <label style="width: 500px">
+                                <input type="email" class="form-control form-control-lg" placeholder="Enter Email" name="email" />
+                            </label>
                             <label class="form-label" for="email">Email</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <input type="password" class="form-control form-control-lg" placeholder="Enter password" name="password" />
+                            <label style="width: 500px">
+                                <input type="password" class="form-control form-control-lg" placeholder="Enter password" name="password" />
+                            </label>
                             <label class="form-label" for="password">Password</label>
                         </div>
 
@@ -68,7 +72,7 @@ include('Server/connect.php');
                                     Remember me
                                 </label>
                             </div>
-                            <a href="#!" class="text-body">Forgot password?</a>
+                            <a href="#" class="text-body">Forgot password?</a>
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
@@ -77,20 +81,24 @@ include('Server/connect.php');
                             <p class="small fw-bold mt-2 pt-1 mb-0">ยังไม่มีบัญชี <a href="user/register.php" class="link-danger">สมัครสมาชิกทั่วไป</a></p>
                         </div>
 
+
                     </form>
+
                 </div>
+
             </div>
         </div>
-        
-        <div class="d-flex flex-column flex-sm-row text-center text-sm-start justify-content-between py-4 px-4 px-xl-5" style="background-color: red; ">
-            <!-- Copyright -->
-            <div class="text-white mb-3 mb-md-0">
-                Marathon site 2022 zz
-            </div>
-        </div>
+
+
     </section>
 
+
 </form>
+
+<footer class="d-flex flex-column flex-sm-row text-center " style="background-color: #dddddd; margin-top: auto; min-height: 10px;">
+    Marathon site Copyright &copy; 2023
+</footer>
+
 
 
 </body>

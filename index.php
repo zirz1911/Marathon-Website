@@ -48,18 +48,20 @@
                     <li class="btn-outline-dark">
                         <a class="nav-link text-white" href="#"><i class="fa fa-contact-book"></i> Contact</a>
                     </li>
+
+                    <?php if (empty($_SESSION['email'])) : ?>
                     <li class="btn-outline-dark">
                         <a class="nav-link text-white" href="login.php"><i class="fa fa-contact-book"></i> Login</a>
                     </li>
-
-                    <!-- Show when logged in -->
-                    <?php if (isset($_SESSION['username'])) : ?>
-                       
-                        <li class="btn-outline-dark">
-                        <a class="nav-link text-white" href="index.php?logout='1'"><i class="fa fa-contact-book"></i> Logout</a>
-                        </li>
-                    
                     <?php endif ?>
+
+                    <?php if (isset($_SESSION['email'])) : ?>
+
+                        <li class="btn-outline-dark">
+                            <a class="nav-link text-white" href="./index.php?logout='1'"><i class="fa fa-contact-book"></i> Logout</a>
+                        </li>
+                    <?php endif ?>
+
 
 
                 </ul>
@@ -82,7 +84,7 @@
         <div class="row">
             <div class="col-md-12" style="background-color: #f3f3f3; opacity: 100%; padding-bottom: 0px">
 
-                
+
     <div class="header">
         <h2>Home Page</h2>
     </div>
@@ -92,7 +94,7 @@
         <?php if (isset($_SESSION['success'])) : ?>
             <div class="success">
                 <p class="alert alert-success">
-                    <?php 
+                    <?php
                     echo $_SESSION['success'];
                     unset($_SESSION['success']);
                     ?>
@@ -105,7 +107,7 @@
         <?php if(isset($_SESSION['username'])) : ?>
             <p>Welcome <strong><?php echo $_SESSION['username'];?></p>
             <p><a href="index.php?logout='1'" style="color: red;">Logout</a></p>
-            <?php endif ?>    
+            <?php endif ?>
     </div>
 
     <script src="style/js/bootstrap.bundle.js"></script>

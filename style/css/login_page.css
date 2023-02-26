@@ -13,3 +13,11 @@ height: calc(100% - 73px);
 height: 100%;
 }
 }
+
+#main-footer {
+    text-align: center;
+    padding: 1rem;
+    background: red;
+    color: red;
+    height: 60px;
+}

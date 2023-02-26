@@ -34,7 +34,7 @@ if (isset($_POST['login_user'])) {
             $row = mysqli_fetch_array($result);
             $_SESSION['email'] = $email;
             $_SESSION['success'] = "Your are now logged in as Admin";
-            Header("Location: admin/index_admin.php");
+            Header("Location: ./index.php");
         } elseif (mysqli_num_rows($result) == 0){ //Check Table User ถ้าไม่มีก็ไป Check Table User
             $query = "SELECT * FROM
             user WHERE email = '$email' AND user_password = '$password' ";
@@ -44,7 +44,7 @@ if (isset($_POST['login_user'])) {
                 $row = mysqli_fetch_array($result);
                 $_SESSION['email'] = $email;
                 $_SESSION['success'] = "Your are now logged in as User";
-                Header("Location: user/index_user.php");
+                Header("Location: ./index.php");
             }
             if (mysqli_num_rows($result) == 0) { //Check ทั้งหมดแล้วไม่มี
                 array_push($errors, "Wrong Username or Password");
